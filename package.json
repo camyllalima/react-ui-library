@@ -20,7 +20,7 @@
     "prepare": "tsdx build",
     "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "release": "auto shipit --base-branch=main"
+    "release": "auto shipit --base-branch=master"
   },
   "peerDependencies": {
     "react": ">=16"
