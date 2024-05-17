@@ -4,3 +4,4 @@ export * from './components/Wizard';
 export * from './components/Toggle';
 export * from './components/Link';
 export * from './components/Gauge';
+export * from './components/BasicTable';
