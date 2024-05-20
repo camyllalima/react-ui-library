@@ -93,8 +93,6 @@ export const Tbody = styled.tbody<TableStyledProps>`
       border-radius: 0.25rem;
       border-color: ${({ trBodyHoverBorderColor }) =>
         trBodyHoverBorderColor || '#a0a2a4'};
-      background-color: ${({ trBodyHoverBackgroundColor }) =>
-        trBodyHoverBackgroundColor || '#e5e5e640'};
       outline: none;
 
       &:first-child {
