@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { BasicTable } from '../src';
-import { CheckedIcon } from '../src/icons';
+import { BasicTable } from '../../src';
+import { CheckedIcon } from '../../src/icons';
 
 export default {
   title: 'Components/BasicTable',
