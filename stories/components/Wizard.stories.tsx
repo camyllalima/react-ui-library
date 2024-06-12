@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Wizard } from '../src';
+import { Wizard } from '../../src';
 
 export default {
   title: 'Components/Wizard',

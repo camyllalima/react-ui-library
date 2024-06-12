@@ -5,3 +5,4 @@ export * from './components/Toggle';
 export * from './components/Link';
 export * from './components/Gauge';
 export * from './components/BasicTable';
+export * from './components/Input';
