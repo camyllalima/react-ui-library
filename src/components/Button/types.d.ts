@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Ícone do botão. */
   icon?: ReactNode;
 
-  iconPosition?: IconPosition;
+  iconPosition?: ButtonIconPosition;
 
   /** Tipo do botão. Poderá escolher entre os valores 'text' | 'contained' | 'outlined' | undefined. */
   buttonType?: ButtonType;
@@ -54,7 +54,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 type ButtonType = 'text' | 'contained' | 'outlined' | undefined;
 
 /** Posição do ícone no botão. */
-type IconPosition = 'start' | 'end'; 
+type ButtonIconPosition = 'start' | 'end';
 
 /** Propriedades de estilo personalizadas do botão. */
 interface ButtonCustomStylesProps {

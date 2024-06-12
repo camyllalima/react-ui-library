@@ -5,6 +5,12 @@ interface InputProps extends InputHTMLAttributes {
   /** Ícone do input. */
   icon?: ReactNode;
 
+  /** Posição do ícone no input. */
+  iconPosition?: InputIconPosition;
+
+  /** Espaçamento interno do ícone. */
+  paddingIcon?: string;
+
   /** Placeholder do input. */
   placeholder?: string;
 
@@ -15,7 +21,10 @@ interface InputProps extends InputHTMLAttributes {
   maxLength?: string;
 
   /** Evento de mudança de valor no input. */
-  onChange?: (value) => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+
+  /** Evento de colar no input. */
+  onPaste?: React.ClipboardEventHandler<HTMLInputElement>;
 
   /** Tamanho do input. */
   width?: string;
@@ -43,4 +52,16 @@ interface InputProps extends InputHTMLAttributes {
 
   /** Peso da fonte do input. */
   fontWeight?: string;
+
+  /** Indica se o input está desabilitado. */
+  disabled?: boolean;
+
+  /** Indica o status do input. */
+  status?: InputStatus;
 }
+
+/** Posição do ícone no input. */
+type InputIconPosition = 'start' | 'end';
+
+/** Status do input. */
+type InputStatus = 'success' | 'error' | 'warning';

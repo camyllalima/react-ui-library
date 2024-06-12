@@ -1,22 +1,27 @@
 import React from 'react';
-import { InputContainer, InputElement } from './styles';
+import { IconContainer, InputContainer, InputElement } from './styles';
 import { InputProps } from './types';
 
 export const Input: React.FC<InputProps> = ({
   icon,
-  placeholder,
+  iconPosition,
+  paddingIcon = '0 0.25rem',
+  placeholder = 'input',
   value,
   maxLength,
   onChange,
+  onPaste,
   width = '6rem',
   height = '1.5rem',
   backgroundColor,
   borderColor,
   focusBorderColor,
   hoverBorderColor,
-  color = '#8f9194',
+  color,
   fontSize,
   fontWeight,
+  disabled,
+  status,
 }) => {
   return (
     <InputContainer
@@ -26,13 +31,16 @@ export const Input: React.FC<InputProps> = ({
       borderColor={borderColor}
       focusBorderColor={focusBorderColor}
       hoverBorderColor={hoverBorderColor}
+      iconPosition={iconPosition}
+      disabled={disabled}
+      status={status}
     >
-      {icon}
+      {icon && <IconContainer paddingIcon={paddingIcon}>{icon}</IconContainer>}
       <InputElement
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        onPaste={onChange}
+        onPaste={onPaste}
         enterKeyHint={'enter'}
         maxLength={maxLength}
         width={width}
@@ -40,6 +48,7 @@ export const Input: React.FC<InputProps> = ({
         color={color}
         fontSize={fontSize}
         fontWeight={fontWeight}
+        disabled={disabled}
       />
     </InputContainer>
   );
