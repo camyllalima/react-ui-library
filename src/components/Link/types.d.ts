@@ -15,7 +15,7 @@ export interface LinkProps {
   fontSize?: string;
 
   /** Peso da fonte do link */
-  fontWeight?: string;
+  fontWeight?: string | number;
 
   /** Cor de fundo do link */
   backgroundColor?: string;

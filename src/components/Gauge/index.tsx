@@ -1,15 +1,16 @@
 import React from 'react';
 import { GaugeColors, GaugeProps } from './types';
 import { GaugeContainer } from './styles';
+import { theme } from '../../themes';
 
 export const Gauge: React.FC<GaugeProps> = ({
   score = 1000,
   multiColor = true,
   colors = {
-    low: '#E71C35',
-    middle: '#FFC700',
-    good: '#B7CD2D',
-    high: '#75C26B',
+    low: theme.colors.red['10'],
+    middle: theme.colors.yellow['10'],
+    good: theme.colors.green['10'],
+    high: theme.colors.green['20'],
   },
   width = '150px',
   height = '140px',
@@ -66,7 +67,7 @@ export const Gauge: React.FC<GaugeProps> = ({
           r="150"
           cx="50%"
           cy="50%"
-          stroke="#D4D5D6"
+          stroke={theme.colors.neutral['80']}
           stroke-width="15"
           stroke-dasharray="100, 950"
           fill="none"
@@ -75,7 +76,7 @@ export const Gauge: React.FC<GaugeProps> = ({
           r="150"
           cx="50%"
           cy="50%"
-          stroke="#D4D5D6"
+          stroke={theme.colors.neutral['80']}
           stroke-width="15"
           stroke-dasharray="100, 950"
           stroke-dashoffset="-130"
@@ -85,7 +86,7 @@ export const Gauge: React.FC<GaugeProps> = ({
           r="150"
           cx="50%"
           cy="50%"
-          stroke="#D4D5D6"
+          stroke={theme.colors.neutral['80']}
           stroke-width="15"
           stroke-dasharray="100, 950"
           stroke-dashoffset="-260"
@@ -95,7 +96,7 @@ export const Gauge: React.FC<GaugeProps> = ({
           r="150"
           cx="50%"
           cy="50%"
-          stroke="#D4D5D6"
+          stroke={theme.colors.neutral['80']}
           stroke-width="15"
           stroke-dasharray="100, 950"
           stroke-dashoffset="-390"
@@ -150,7 +151,7 @@ export const Gauge: React.FC<GaugeProps> = ({
           id="score"
           x="200"
           y="140"
-          fill="#5C5E62"
+          fill={theme.colors.neutral['30']}
           text-anchor="middle"
           dominant-baseline="central"
         >
@@ -160,7 +161,7 @@ export const Gauge: React.FC<GaugeProps> = ({
           id="gauge-value"
           x="200"
           y="200"
-          fill="#C3C4C5"
+          fill={theme.colors.neutral['90']}
           text-anchor="middle"
           dominant-baseline="central"
         >

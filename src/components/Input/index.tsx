@@ -1,18 +1,19 @@
 import React from 'react';
 import { IconContainer, InputContainer, InputElement } from './styles';
 import { InputProps } from './types';
+import { theme } from '../../themes';
 
 export const Input: React.FC<InputProps> = ({
   icon,
   iconPosition,
-  paddingIcon = '0 0.25rem',
+  paddingIcon = `${theme.space.x0} ${theme.space['x0.25rem']}`,
   placeholder = 'input',
   value,
   maxLength,
   onChange,
   onPaste,
-  width = '6rem',
-  height = '1.5rem',
+  width = theme.space['x6rem'],
+  height = theme.space['x1.5rem'],
   backgroundColor,
   borderColor,
   focusBorderColor,
@@ -41,7 +42,6 @@ export const Input: React.FC<InputProps> = ({
         value={value}
         onChange={onChange}
         onPaste={onPaste}
-        enterKeyHint={'enter'}
         maxLength={maxLength}
         width={width}
         height={height}

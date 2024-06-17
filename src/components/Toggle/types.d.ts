@@ -51,7 +51,7 @@ export interface ToggleProps extends ButtonHTMLAttributes {
   labelColor?: string;
 
   /** Peso da fonte do label. */
-  labelFontWeight?: string;
+  labelFontWeight?: string | number;
 
   /** Ação de click no toggle. */
   onClick?: () => void;

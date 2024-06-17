@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { LabelPosition, ToggleProps } from './types';
+import { theme } from '../../themes';
 
 /** Função para obter a posição do label com base no tipo especificado.
  * @param labelPosition Posição do label ('top', 'right', 'bottom' ou 'left').
@@ -23,7 +24,7 @@ const getLabelPosition = (labelPosition?: LabelPosition) => {
 export const ToggleWrapper = styled.div<ToggleProps>`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${theme.space['x0.5rem']};
   width: fit-content;
   flex-direction: ${props => getLabelPosition(props?.labelPosition)};
 `;
@@ -36,10 +37,10 @@ export const ToggleContainer = styled.button<ToggleProps>`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 4px;
+  padding: ${theme.space.x0} ${theme.space['x0.25rem']};
   background-color: ${({ isActive, colorActive, colorInactive }) =>
     isActive ? colorActive : colorInactive};
-  border-radius: 16px;
+  border-radius: ${theme.space.x1rem};
   transition: background-color 0.2s;
   border: ${({ isActive, colorActive, colorInactive }) =>
     isActive ? colorActive : colorInactive};
@@ -68,7 +69,7 @@ export const ToggleBall = styled.span<ToggleProps>`
   display: block;
   width: ${({ ballSize }) => ballSize};
   height: ${({ ballSize }) => ballSize};
-  background-color: #ffffff;
+  background-color: ${theme.colors.neutral.white};
   border-radius: 50%;
   transition: left 0.3s;
 `;
