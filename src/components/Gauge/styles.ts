@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { GaugeProps } from './types';
+import { theme } from '../../themes';
 
 /** Componente de gauge estilizado. */
 export const GaugeContainer = styled.div<GaugeProps>`
@@ -14,15 +15,15 @@ export const GaugeContainer = styled.div<GaugeProps>`
   }
 
   #score {
-    font-size: 60px;
+    font-size: ${theme.typography.fontSize.lg.x7};
     transform: rotate(-176.5deg);
-    transform-origin: 200px 200px;
-    font-weight: 700;
+    transform-origin: ${theme.space.x200px} ${theme.space.x200px};
+    font-weight: ${theme.typography.fontWeight['700']};
   }
   #gauge-value {
-    font-size: 35px;
+    font-size: ${theme.typography.fontSize.lg.x3};
     transform: rotate(-176.5deg);
-    transform-origin: 200px 200px;
-    font-weight: 400;
+    transform-origin: ${theme.space.x200px} ${theme.space.x200px};
+    font-weight: ${theme.typography.fontWeight['400']};
   }
 `;

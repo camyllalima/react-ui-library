@@ -1,10 +1,11 @@
 import React from 'react';
 import { Svg } from './styles';
 import { LoaderProps } from './types';
+import { theme } from '../../themes';
 
 export const Loader: React.FC<LoaderProps> = ({
-  color = '#118DFF',
-  size = 20,
+  color = theme.colors.blue['20'],
+  size = theme.space['x1.25rem'],
   speed = 1,
 }) => {
   return (
