@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { theme } from '../../themes';
 
 /** Responsável por envolver toda a estrutura do Wizard e seus elementos. */
 export const WizardContainer = styled.nav<WizardProps>`
@@ -7,29 +8,29 @@ export const WizardContainer = styled.nav<WizardProps>`
   grid-template-columns: ${({ step }) =>
     step ? `repeat(${step}, 1fr)` : 'repeat(5, 1fr)'};
   grid-template-rows: 1fr;
-  background-color: #ffffff;
-  border: thin solid #e5e6e6;
+  background-color: ${theme.colors.neutral.white};
+  border: thin solid ${theme.colors.neutral['20']};
 `;
 
 /** Responsável por estilizar as etapas do Wizard. */
 export const WizardStep = styled.button<WizardProps>`
   display: flex;
-  gap: 0.5rem;
-  padding: 1rem;
-  background-color: #ffffff;
+  gap: ${theme.space['x0.5rem']};
+  padding: ${theme.space.x1rem};
+  background-color: ${theme.colors.neutral.white};
   justify-content: space-between;
   align-items: center;
-  border: thin solid transparent;
-  border-right-color: #e5e6e6;
+  border: ${theme.space.x1px} solid ${theme.colors.neutral.transparent};
+  border-right-color: ${theme.colors.neutral['20']};
 
   ${({ active, finished }) =>
     active
       ? css`
-          border-bottom: 2px solid #48a4f9;
+          border-bottom: ${theme.space.x2px} solid ${theme.colors.blue['10']};
         `
       : finished
       ? css`
-          border-bottom: 2px solid #7ac143;
+          border-bottom: ${theme.space.x2px} solid ${theme.colors.green['40']};
         `
       : ''};
 
@@ -40,20 +41,20 @@ export const WizardStep = styled.button<WizardProps>`
         cursor: initial;
         h1,
         text {
-          color: #c3c4c5;
+          color: ${theme.colors.neutral['90']};
         }
 
         svg {
           path {
-            stroke: #c3c4c5;
+            stroke: ${theme.colors.neutral['90']};
           }
         }
       `};
   }
 
   &:hover:not(:disabled) {
-    background-color: #f6f7f7;
-    border-bottom: 2px solid #000000;
+    background-color: ${theme.colors.neutral['60']};
+    border-bottom: ${theme.space.x2px} solid ${theme.colors.neutral.black};
     cursor: pointer;
   }
 `;
@@ -61,14 +62,14 @@ export const WizardStep = styled.button<WizardProps>`
 /** Responsável por agrupar o conteúdo das etapas do Wizard. */
 export const WizardStepContainer = styled.div<WizardProps>`
   display: flex;
-  gap: 0.5rem;
+  gap: ${theme.space['x0.5rem']};
 
   ${({ active }) =>
     active
       ? css`
           svg {
             path {
-              stroke: #48a4f9;
+              stroke: ${theme.colors.blue['10']};
             }
           }
         `
@@ -84,29 +85,29 @@ export const WizardStepWrapper = styled.div`
 
 /** Responsável por estilizar o título das etapas do Wizard. */
 export const WizardStepTitle = styled.h1<WizardProps>`
-  color: #48a4f9;
-  font-size: 0.75rem;
+  color: ${theme.colors.blue['10']};
+  font-size: ${theme.typography.fontSize.sm.x3};
   font-style: normal;
-  font-weight: 500;
+  font-weight: ${theme.typography.fontWeight['500']};
   line-height: 150%;
 
   ${({ active }) =>
     active
       ? css`
-          font-weight: 700;
-          color: #48a4f9;
+          font-weight: ${theme.typography.fontWeight['700']};
+          color: ${theme.colors.blue['10']};
         `
       : css`
-          color: #5c5e62;
+          color: ${theme.colors.neutral['30']};
         `};
 `;
 
 /** Responsável por estilizar a descrição das etapas do Wizard. */
 export const WizardStepDescription = styled.text<WizardProps>`
-  color: #5c5e62;
-  font-size: 0.75rem;
+  color: ${theme.colors.neutral['30']};
+  font-size: ${theme.typography.fontSize.sm.x3};
   font-style: normal;
-  font-weight: 400;
+  font-weight: ${theme.typography.fontWeight['400']};
   line-height: 150%;
   text-wrap: nowrap;
 `;

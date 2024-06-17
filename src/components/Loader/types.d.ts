@@ -5,7 +5,7 @@ interface LoaderProps {
   color?: string;
 
   /** Tamanho do loader. */
-  size?: number;
+  size?: number | string;
 
   /** Velocidade do loader. */
   speed?: number;
